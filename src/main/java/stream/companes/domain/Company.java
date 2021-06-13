@@ -1,16 +1,16 @@
-package Stream.WorkersAndOrganizations.domain;
+package stream.companes.domain;
 
-import Stream.WorkersAndOrganizations.enums.OrganisationName;
+import stream.companes.enums.Brand;
 
 import java.util.List;
 import java.util.UUID;
 
-public class Organization {
+public class Company {
     private UUID id;
     private List<Worker> workers;
-    private Enum<OrganisationName> organisationName;
+    private Enum<Brand> organisationName;
 
-    public Organization(UUID id, List<Stream.WorkersAndOrganizations.domain.Worker> workers, Enum<OrganisationName> organisationName) {
+    public Company(UUID id, List<Worker> workers, Enum<Brand> organisationName) {
         this.id = id;
         this.workers = workers;
         this.organisationName = organisationName;
@@ -33,19 +33,19 @@ public class Organization {
         this.id = id;
     }
 
-    public List<Stream.WorkersAndOrganizations.domain.Worker> getWorkers() {
+    public List<Worker> getWorkers() {
         return workers;
     }
 
-    public void setWorkers(List<Stream.WorkersAndOrganizations.domain.Worker> workers) {
+    public void setWorkers(List<Worker> workers) {
         this.workers = workers;
     }
 
-    public Enum<OrganisationName> getOrganisationName() {
+    public Enum<Brand> getOrganisationName() {
         return organisationName;
     }
 
-    public void setOrganisationName(Enum<OrganisationName> organisationName) {
+    public void setOrganisationName(Enum<Brand> organisationName) {
         this.organisationName = organisationName;
     }
 }

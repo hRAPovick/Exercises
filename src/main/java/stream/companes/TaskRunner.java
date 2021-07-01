@@ -1,13 +1,16 @@
 package stream.companes;
 
+import org.junit.Test;
 import stream.companes.domain.Company;
 import stream.companes.domain.Worker;
 import stream.companes.enums.Brand;
 import stream.companes.enums.Profession;
 import stream.companes.util.CompanyCreator;
-import org.junit.Test;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
@@ -98,7 +101,5 @@ public class TaskRunner {
         System.out.println("Profession: " + randomProfession + "\nWorkers:\n");
         System.out.println(workers);
     }
-
-
 
 }

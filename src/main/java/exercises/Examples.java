@@ -1,11 +1,7 @@
-package stream;
+package exercises;
 
 import org.junit.Test;
-
 import java.util.Random;
-import java.util.stream.Stream;
-
-import static java.lang.Thread.sleep;
 
 public class Examples {
     /**

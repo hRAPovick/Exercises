@@ -1,4 +1,6 @@
-package stream.companes.enums;
+package exercises.enums;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * 44 профессии.
@@ -47,5 +49,17 @@ public enum Profession {
     SUPERVISOR,
     SYSTEMS_ADMINISTRATOR,
     SYSTEMS_ANALYST,
-    TRADER
+    TRADER;
+
+    private static final int PROFESSIONS_AMOUNT = Profession.values().length;
+
+    public static String getRandomStringProfession() {
+        return Profession.values()[ThreadLocalRandom.current()
+                .nextInt(PROFESSIONS_AMOUNT)].toString();
+    }
+
+    public static Profession getRandomProfession() {
+        return Profession.values()[ThreadLocalRandom.current()
+                .nextInt(PROFESSIONS_AMOUNT)];
+    }
 }

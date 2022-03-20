@@ -1,19 +1,17 @@
-package stream.companes.util;
+package exercises.companes.util;
 
-import stream.companes.domain.Worker;
-import stream.companes.enums.LastName;
-import stream.companes.enums.Name;
-import stream.companes.enums.Profession;
+import exercises.companes.domain.Worker;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+import static exercises.enums.LastName.getRandomLastName;
+import static exercises.enums.Name.getRandomName;
+import static exercises.enums.Profession.getRandomProfession;
+
 public class WorkerCreator {
-    private static final int NAMES_AMOUNT = Name.values().length;
-    private static final int LAST_NAMES_AMOUNT = LastName.values().length;
-    private static final int PROFESSIONS_AMOUNT = Profession.values().length;
     private static final int MIN_SALARY = 30_000;
     private static final int MAX_SALARY = 100_000;
 
@@ -32,20 +30,13 @@ public class WorkerCreator {
      * зарплата: от 30_000 до 100_000.
      */
     public Worker workerCreator() {
-        return new Worker(
-                Name.values()[ThreadLocalRandom.current()
-                        .nextInt(NAMES_AMOUNT)],
-                LastName.values()[ThreadLocalRandom.current()
-                        .nextInt(LAST_NAMES_AMOUNT)],
-                Profession.values()[ThreadLocalRandom.current()
-                        .nextInt(PROFESSIONS_AMOUNT)],
-                ThreadLocalRandom.current()
-                        .nextInt(MIN_SALARY, MAX_SALARY));
+        return new Worker(getRandomName(), getRandomLastName(), getRandomProfession(),
+                ThreadLocalRandom.current().nextInt(MIN_SALARY, MAX_SALARY));
     }
 
     /**
      * Метод для получения списка сгенерированных работников
-     * @param number - необходимое колличество работников
+     * @param number - необходимое количество работников
      * @return - список работников
      */
     public List<Worker> getWorkers(int number) {

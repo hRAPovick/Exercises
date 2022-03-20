@@ -1,4 +1,6 @@
-package stream.companes.enums;
+package exercises.enums;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * 100 Фамилий в алфавитном порядке.
@@ -103,5 +105,17 @@ public enum LastName {
     WILSON,
     WOOD,
     WRIGHT,
-    YOUNG
+    YOUNG;
+
+    private static final int LAST_NAMES_AMOUNT = LastName.values().length;
+
+    public static String getRandomStringLastName() {
+        return LastName.values()[ThreadLocalRandom.current()
+                .nextInt(LAST_NAMES_AMOUNT)].toString();
+    }
+
+    public static LastName getRandomLastName() {
+        return LastName.values()[ThreadLocalRandom.current()
+                .nextInt(LAST_NAMES_AMOUNT)];
+    }
 }

@@ -1,8 +1,8 @@
-package stream.companes.domain;
+package exercises.companes.domain;
 
-import stream.companes.enums.LastName;
-import stream.companes.enums.Profession;
-import stream.companes.enums.Name;
+import exercises.enums.LastName;
+import exercises.enums.Profession;
+import exercises.enums.Name;
 
 public class Worker {
     private Enum<Name> name;

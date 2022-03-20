@@ -1,4 +1,6 @@
-package stream.companes.enums;
+package exercises.enums;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * 100 Организаций в алфавитном порядке
@@ -102,5 +104,17 @@ public enum Brand {
     WALGREENS_BOOTS_ALLIANCE,
     WALMART,
     WALT_DISNEY,
-    WELLS_FARGO
+    WELLS_FARGO;
+
+    private static final int COMPANY_AMOUNT = Brand.values().length;
+
+    public static String getRandomStringBrand() {
+        return Brand.values()[ThreadLocalRandom.current()
+                .nextInt(COMPANY_AMOUNT)].toString();
+    }
+
+    public static Brand getRandomBrand() {
+        return Brand.values()[ThreadLocalRandom.current()
+                .nextInt(COMPANY_AMOUNT)];
+    }
 }

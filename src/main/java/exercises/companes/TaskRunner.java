@@ -1,12 +1,13 @@
-package stream.companes;
+package exercises.companes;
 
 import org.junit.Test;
-import stream.companes.domain.Company;
-import stream.companes.domain.Worker;
-import stream.companes.enums.Brand;
-import stream.companes.enums.Profession;
-import stream.companes.util.CompanyCreator;
+import exercises.companes.domain.Company;
+import exercises.companes.domain.Worker;
+import exercises.enums.Brand;
+import exercises.enums.Profession;
+import exercises.companes.util.CompanyCreator;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
@@ -62,7 +63,7 @@ public class TaskRunner {
     }
 
     /**
-     * Метод вычисляет среднюю зарплату в компаниях, где колличество рабоников больше 5 человек.
+     * Метод вычисляет среднюю зарплату в компаниях, где количество работников больше 5 человек.
      * Выводит список компаний на экран по возрастанию средней зарплаты.
      */
     @Test
@@ -94,7 +95,7 @@ public class TaskRunner {
         List<Worker> workers = companies.stream()
                 .flatMap(company -> company.getWorkers().stream())
                 .filter(worker -> worker.getProfession().equals(randomProfession))
-                .sorted((o1, o2) -> Integer.compare(o1.getSalary(), o2.getSalary()))
+                .sorted(Comparator.comparingInt(Worker::getSalary))
                 .collect(Collectors.toList());
 
         System.out.println("List of one-profession-workers in all companies which sorted by salary.");

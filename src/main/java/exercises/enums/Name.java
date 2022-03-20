@@ -1,4 +1,6 @@
-package stream.companes.enums;
+package exercises.enums;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * 100 Имен в алфавитном порядке.
@@ -103,5 +105,17 @@ public enum Name {
     VICTOR,
     WADE,
     WALTER,
-    WILEY
+    WILEY;
+
+    private static final int NAMES_AMOUNT = Name.values().length;
+
+    public static String getRandomStringName() {
+        return Name.values()[ThreadLocalRandom.current()
+                .nextInt(NAMES_AMOUNT)].toString();
+    }
+
+    public static Name getRandomName() {
+        return Name.values()[ThreadLocalRandom.current()
+                .nextInt(NAMES_AMOUNT)];
+    }
 }

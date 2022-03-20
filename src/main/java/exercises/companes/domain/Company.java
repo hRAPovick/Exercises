@@ -1,6 +1,6 @@
-package stream.companes.domain;
+package exercises.companes.domain;
 
-import stream.companes.enums.Brand;
+import exercises.enums.Brand;
 
 import java.util.List;
 import java.util.UUID;
